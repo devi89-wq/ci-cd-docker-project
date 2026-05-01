@@ -2,27 +2,23 @@ name: CI Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Show files
-        run: ls -la
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
+    - name: Install dependencies
+      run: pip install flask
 
-      - name: Install dependencies
-        run: pip install flask
-
-      - name: Run test
-        run: echo "Pipeline working successfully"
+    - name: Run app test
+      run: echo "App running successfully!"
