@@ -1,14 +1,33 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
+patients = []
+
 @app.route('/')
-def hello_world():
-    # Render a beautiful HTML page instead of plain text
+def home():
     return render_template('index.html')
 
-if __name__ == '__main__':
-    # Running the app on 0.0.0.0 so it can be accessed from outside the container
-    app.run(host='0.0.0.0', port=5000)
-def test_basic():
-assert 1 + 1 == 2
+@app.route('/patients', methods=['GET', 'POST'])
+def patient():
+    if request.method == 'POST':
+        name = request.form['name']
+        age = request.form['age']
+        disease = request.form['disease']
+
+        patients.append({
+            "name": name,
+            "age": age,
+            "disease": disease
+        })
+
+        return redirect('/patients')
+
+    return render_template('patients.html', patients=patients)
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html', total=len(patients))
+
+if __name__ == "__main__":
+    app.run(debug=True)
