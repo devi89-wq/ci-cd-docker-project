@@ -15,8 +15,4 @@ def patients():
     return render_template('patient.html')
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     app.run(debug=True)
-=======
-    app.run(debug=True)
->>>>>>> 9e62bb2b9a96479aa3d4eb5b4f3bfc11e757998d
