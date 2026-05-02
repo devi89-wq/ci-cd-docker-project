@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patients</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>Register Patient</h2>
+
+<form method="POST">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="number" name="age" placeholder="Age" required>
+    <input type="text" name="disease" placeholder="Disease" required>
+    <button type="submit">Add Patient</button>
+</form>
+
+<h2>Patient List</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Disease</th>
+    </tr>
+
+    {% for p in patients %}
+    <tr>
+        <td>{{ p.name }}</td>
+        <td>{{ p.age }}</td>
+        <td>{{ p.disease }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/">⬅ Back</a>
+
+</body>
+</html>

@@ -1,101 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Project</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #ffffff;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 50px 70px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: fadeIn 1s ease-out;
-            max-width: 600px;
-            width: 90%;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #00d2ff, #3a7bd5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #d1d1e0;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .badges {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .badge:hover {
-            background: #00d2ff;
-            color: #0f2027;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
-            cursor: default;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    <title>Hospital Management</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>CI/CD Pipeline Project</h1>
-        <p>Welcome to my automated DevOps college project! This application is seamlessly built, tested, and containerized automatically on every commit.</p>
-        
-        <div class="badges">
-            <div class="badge">🐍 Python Flask</div>
-            <div class="badge">🐳 Docker</div>
-            <div class="badge">⚡ GitHub Actions</div>
-        </div>
+    <h1>🏥 Hospital Management System</h1>
+
+    <div class="nav">
+        <a href="/patients">Patient Registration</a>
+        <a href="/dashboard">Dashboard</a>
     </div>
 </body>
 </html>

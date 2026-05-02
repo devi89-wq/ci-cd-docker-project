@@ -3,10 +3,16 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-    # Render a beautiful HTML page instead of plain text
+def index():
     return render_template('index.html')
 
-if __name__ == '__main__':
-    # Running the app on 0.0.0.0 so it can be accessed from outside the container
-    app.run(host='0.0.0.0', port=5000)
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route('/patients')
+def patients():
+    return render_template('patient.html')
+
+if __name__ == "__main__":
+    app.run(debug=True)
