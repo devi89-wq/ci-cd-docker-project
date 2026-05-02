@@ -2,14 +2,19 @@ name: CI Pipeline
 
 on:
   push:
+<<<<<<< HEAD
     branches:
       - main
+=======
+    branches: [ "main" ]
+>>>>>>> 9e62bb2b9a96479aa3d4eb5b4f3bfc11e757998d
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+<<<<<<< HEAD
     - name: Checkout Code
       uses: actions/checkout@v3
 
@@ -23,3 +28,18 @@ jobs:
 
     - name: Test App
       run: python -c "import app"
+=======
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: pip install flask
+
+    - name: Run app test
+      run: echo "App running successfully!"
+>>>>>>> 9e62bb2b9a96479aa3d4eb5b4f3bfc11e757998d
